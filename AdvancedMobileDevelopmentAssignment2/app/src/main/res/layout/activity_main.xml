@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#faf8ef"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2048"
+        android:textSize="48sp"
+        android:textColor="#776e65"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- Score Container -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="#bbada0"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCORE"
+            android:textColor="#eee4da"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/Difference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="9dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:layout_toStartOf="@+id/linearLayout"
+        />
+    <!-- New Game Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        android:layout_below="@id/titleTextView"
+        android:layout_alignParentEnd="true"
+        android:background="#8f7a66"
+        android:textColor="#f9f6f2"
+        android:layout_marginTop="16dp" />
+
+    <!-- Score Display Below New Game Button -->
+
+    <!-- Square Game Grid -->
+    <FrameLayout
+        android:layout_width="379dp"
+        android:layout_height="349dp"
+        android:layout_above="@+id/instructionsTextView"
+        android:layout_below="@id/resetButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="151dp">
+
+        <!-- This ensures the grid stays square -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <GridLayout
+            android:id="@+id/gameGrid"
+            android:layout_width="match_parent"
+            android:layout_height="351dp"
+            android:background="#bbada0"
+            android:columnCount="4"
+            android:padding="8dp"
+            android:rowCount="4" >
+
+        </GridLayout>
+
+
+    </FrameLayout>
+
+
+    <!-- Instructions -->
+    <TextView
+        android:id="@+id/instructionsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Use swipe gestures to move tiles. Combine tiles with the same number to reach 2048!"
+        android:textSize="12sp"
+        android:textColor="#776e65"
+        android:gravity="center"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/bomb_message"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="554dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="TextView"
+        android:gravity="center"
+        android:textColor="#0000FF"
+        android:textSize="32sp" />
+
+    <ImageView
+        android:id="@+id/explode_img"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/explode"
+        android:visibility="invisible" />
+</RelativeLayout>
